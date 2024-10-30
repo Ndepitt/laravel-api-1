@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function show($id) {
-    $data = Book::with('authors', 'genres')->find($id);
+    public function show() {
+    $data = Book::with('authors', 'genres')->get();
     return response()->json($data);
 }
     public function store(Request $request){
